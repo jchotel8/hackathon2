@@ -1,5 +1,6 @@
 import React from "react";
 import Articles from "../components/articles";
+import Form from "../components/form";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
@@ -11,7 +12,10 @@ const Home = ({ articles, categories, homepage }) => {
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{homepage.hero.title}</h1>
-          <Articles articles={articles} />
+          <div className="uk-child-width-1-2@s" data-uk-grid="true">
+            <Form articles={articles} />
+            <Articles articles={articles} />
+          </div>
         </div>
       </div>
     </Layout>
